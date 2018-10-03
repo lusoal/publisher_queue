@@ -12,7 +12,9 @@ def main():
     bucket_name = configs['aws']['bucket']
     
     #file name sera passado como evento na lambda
-    file_name = 'newcsv.csv'
+    #passar path completo do arquivo
+    file_name = 'meuarquivo.csv'
+
     s3_return = download_s3_file(bucket_name, file_name)
     if s3_return:
         lines = ler_arquivo(file_path)

@@ -1,5 +1,6 @@
 import os
 def ler_arquivo(path):
+    #ira receber como parametro o nome da pasta de onde ele veio (baseado no nome da pasta ira fazer o upload na tabela)
     lines = False
     try:
         a = open(path)
@@ -11,6 +12,7 @@ def ler_arquivo(path):
         print (e)
 
 def csv_parser(lines):
+    #adicionar ao final do dicionario o nome da tabela
     final_list = []
     #remover quebra de linha do codigo
     for i in lines:
