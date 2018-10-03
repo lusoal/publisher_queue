@@ -1,0 +1,9 @@
+aws:
+  bucket: 'bucket-projeto-integrado-usjt'
+file:
+  path: 'newcsv.csv'
+rabbit:
+  host: 'localhost'
+  port: 5672
+  user: 'guest'
+  pass: 'guest'
