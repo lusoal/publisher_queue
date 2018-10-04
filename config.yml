@@ -1,5 +1,6 @@
 aws:
   bucket: 'bucket-projeto-integrado-usjt'
+  bucket_dest: 'bucket-projeto-integrado-usjt-processed'
 file:
   path: 'newcsv.csv'
 rabbit:
