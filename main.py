@@ -18,10 +18,10 @@ def main():
     s3_return = download_s3_file(bucket_name, file_name)
     if s3_return:
         lines = ler_arquivo(file_path)
-        dict_list = csv_parser(lines)
-        for item in dict_list:
-            print (item)
-            publish_on_queue(str(item))
+        dict_list = csv_parser_publisher(lines)
+        #for item in dict_list:
+            #print (item)
+            #publish_on_queue(str(item))
             #mover aquivo de bucket 1 para bucket 2
 
 if __name__ == "__main__":
