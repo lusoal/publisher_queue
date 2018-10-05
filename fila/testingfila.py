@@ -11,6 +11,7 @@ def connect_to_rabbit(configs):
         params = pika.ConnectionParameters(configs['rabbit']['host'], configs['rabbit']['port'], '/', credentials)
         connection = pika.BlockingConnection(params)
         channel = connection.channel()
+        channel.queue_declare(queue='messages')
         retorno = channel
     except Exception as e:
         print (e)
@@ -20,5 +21,4 @@ def publish_on_queue(message):
     channel = connect_to_rabbit(configs)
     if channel:
         #publicar na fila
-        channel.queue_declare(queue='messages')
         channel.basic_publish(exchange='', routing_key='messages', body=message)

@@ -25,8 +25,8 @@ def main():
     s3_return = download_s3_file(bucket_name, event['Records'][0]['s3']['object']['key'])
     if s3_return:
         lines = ler_arquivo(file_path)
+        print ("retornou do s3")
         dict_list = csv_parser_publisher(lines, folder_name)
-        
         upload_file_s3(bucket_processed, file_name, 'newcsv.csv')
         remove_from_s3(bucket_name, event['Records'][0]['s3']['object']['key'])
         os.remove('newcsv.csv')
