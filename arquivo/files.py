@@ -19,8 +19,8 @@ def csv_parser_publisher(lines, table):
     header = lines[0]
     header = header.split(',')
     for linhas in range(1,len(lines)):
-
         items = (lines[linhas].split(','))
+        #remove o \n somente da ultima linha
         last_value = items[len(items)-1].strip()
         items[len(items)-1] = last_value
         dict_new = {}
