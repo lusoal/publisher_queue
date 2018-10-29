@@ -20,5 +20,6 @@ def connect_to_rabbit(configs):
 def publish_on_queue(message):
     channel = connect_to_rabbit(configs)
     if channel:
+        print ('publicando na fila')
         #publicar na fila
         channel.basic_publish(exchange='', routing_key='messages', body=message)

@@ -4,10 +4,11 @@ s3 = boto3.resource('s3')
 
 def download_s3_file(bucket_s3, bucket_file):
     retorno = True
+    print ('Download do objeto do s3')
     if 'csv' in str(bucket_file):
         #download object from s3
         try:
-            s3.meta.client.download_file(bucket_s3, bucket_file, 'newcsv.csv')
+            s3.meta.client.download_file(bucket_s3, bucket_file, '/tmp/newcsv.csv')
         except Exception as e:
             retorno = False
             print (e)
